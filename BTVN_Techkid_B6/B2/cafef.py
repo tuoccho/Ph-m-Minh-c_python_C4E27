@@ -15,7 +15,7 @@ soup = BeautifulSoup(html_content, "html.parser")
 #     f.write(raw_data)
 
 table = soup.find("table", id = "tableContent")
-list_tr = table.tr.find_all('tr')
+list_tr = table.find_all('tr')
 dic_list = []
 
 
@@ -26,9 +26,8 @@ for i in list_tr:
     for a in range(len(list_td)):
         
         so = list_td[a].string
-
         if a == 0:
-            dic['STT'] = so
+            dic['Tiêu đề'] = so
         elif a == 1:
             dic['Quý 4-2016'] = so
         elif a == 2:
@@ -38,5 +37,5 @@ for i in list_tr:
         elif a == 4:
             dic['Quý 3-2017'] = so
     dic_list.append(dic)
-print(dic_list)
-# pyexcel.save_as(records = dic_list, dest_file_name = "cafef.xlsx")
+# print(dic_list)
+pyexcel.save_as(records = dic_list, dest_file_name = "cafef.xlsx")
