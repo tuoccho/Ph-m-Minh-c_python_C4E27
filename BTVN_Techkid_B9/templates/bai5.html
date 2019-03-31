@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <h1>Bài 5: list ALL rivers in 'Africa' continent</h1>
+    {% for rivers in bai5_data %}
+    {% if rivers.continent == "Africa" %}
+        <b>Name:</b>{{ rivers.name }} <br>
+        <b>Continent:</b>{{ rivers.continent }} <br>
+        <b>Length:</b> {{ rivers.length }} <br>
+        --------------------------- <br>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
